@@ -48,10 +48,12 @@ SwitchHandlerInput = (e) => {
       <div className="App">
       <Person 
         name={this.state.persons[0].name} 
-        age={this.state.persons[0].age}/>
+        age={this.state.persons[0].age}
+        title="testing header"/>
       <Person 
         name={this.state.persons[1].name} 
         age={this.state.persons[1].age}
+        title="testing header"
         click={this.SwitchHandler.bind(this, "Da king")}
         changed={this.SwitchHandlerInput}>Wow this is true</Person>
       <Person 
