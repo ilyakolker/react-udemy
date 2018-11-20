@@ -14,7 +14,7 @@ class App extends Component {
     
   }
   
-  SwitchHandler = (newName)=>{
+  SwitchNameHandler = (newName)=>{
     this.setState({
       persons:[
         {name: newName, age:29},
@@ -53,15 +53,14 @@ SwitchHandlerInput = (e) => {
       <Person 
         name={this.state.persons[1].name} 
         age={this.state.persons[1].age}
-        title="testing header"
-        click={this.SwitchHandler.bind(this, "Da king")}
+        click={this.SwitchNameHandler.bind(this, "Da king")}
         changed={this.SwitchHandlerInput}>Wow this is true</Person>
       <Person 
         name={this.state.persons[2].name} 
         age={this.state.persons[2].age}/>
       <button 
       style={style}
-      onClick={()=>this.SwitchHandler("kolker")}>change props</button>
+      onClick={()=>this.SwitchNameHandler("kolker")}>change props</button>
       </div>
     );
   }
