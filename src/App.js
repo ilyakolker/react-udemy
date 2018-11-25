@@ -30,13 +30,21 @@ SwitchHandlerInput = (e) => {
       {name: "ilya", age:29},
       {name: e.target.value, age:28},
       {name: "ruslan", age:27}
-    ]
+    ],
+    showPersons : false,
   })
+}
+
+togglePersonHandler = () => {
+    const doesShow = this.state.showPersons;
+    this.setState({
+      showPersons : !doesShow
+    })
 }
 
   render() {
 
-  const  style ={
+  const  style = {
       backgroundColor: 'white',
       font: 'inherit',
       border: '1px solid blue',
@@ -46,21 +54,28 @@ SwitchHandlerInput = (e) => {
 
     return (
       <div className="App">
-      <Person 
-        name={this.state.persons[0].name} 
-        age={this.state.persons[0].age}
-        title="testing header"/>
-      <Person 
-        name={this.state.persons[1].name} 
-        age={this.state.persons[1].age}
-        click={this.SwitchNameHandler.bind(this, "Da king")}
-        changed={this.SwitchHandlerInput}>Wow this is true</Person>
-      <Person 
-        name={this.state.persons[2].name} 
-        age={this.state.persons[2].age}/>
+     { 
+       !this.state.showPersons ?
+        <div>
+            <Person 
+              name={this.state.persons[0].name} 
+              age={this.state.persons[0].age}
+              title="testing header"/>
+            <Person 
+              name={this.state.persons[1].name} 
+              age={this.state.persons[1].age}
+              click={this.SwitchNameHandler.bind(this, "Da king")}// Better to use bind 
+              changed={this.SwitchHandlerInput}
+              >Wow this is true</Person>
+            <Person 
+              name={this.state.persons[2].name} 
+              age={this.state.persons[2].age}/>
+        </div> : null
+      }
       <button 
       style={style}
-      onClick={()=>this.SwitchNameHandler("kolker")}>change props</button>
+      onClick={this.togglePersonHandler}//not a good practice to use method
+      >change props</button>
       </div>
     );
   }
