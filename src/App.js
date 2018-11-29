@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Person from './Person/Person';
 import Radium,{StyleRoot} from 'radium';
-import './App.css';
+import Classes from './App.css';
 
 
 class App extends Component {
@@ -77,10 +77,10 @@ togglePersonHandler = () => {
 
     let classes = [];
     if (this.state.persons.length <=2) {
-      classes.push('red');
+      classes.push(Classes.red);
     }
     if (this.state.persons.length <=1) {
-      classes.push('bold');
+      classes.push(Classes.bold);
     }
     // This is my way of doing it
     // let classes = ['red','bold'];
@@ -92,7 +92,7 @@ togglePersonHandler = () => {
     
     return (
 
-      <div className="App">
+      <div className={Classes.App}>
       <p className={classes.join(' ')}>This is really working!</p>
       <button 
       style={style}
