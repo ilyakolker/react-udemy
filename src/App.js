@@ -52,10 +52,7 @@ togglePersonHandler = () => {
       border: '1px solid blue',
       padding: '8px',
       cursor: 'pointer',
-      ':hover' : {
-        backgroundColor: 'gray',
-        color: 'white'
-      }
+     
     };
 
     let persons = null;
@@ -76,11 +73,7 @@ togglePersonHandler = () => {
       );
 
       style.backgroundColor = 'red';
-      style[':hover'] = {
-        backgroundColor: 'lightblue',
-        color: 'black'
-      };
-    }
+     }
 
     let classes = [];
     if (this.state.persons.length <=2) {
@@ -98,7 +91,7 @@ togglePersonHandler = () => {
     // }
     
     return (
-      <StyleRoot>
+
       <div className="App">
       <p className={classes.join(' ')}>This is really working!</p>
       <button 
@@ -107,9 +100,9 @@ togglePersonHandler = () => {
       >Toggle persons</button>
       {persons}
       </div>
-      </StyleRoot>
+
     );
   }
 }
 
-export default Radium(App);
+export default App;
