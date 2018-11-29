@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Person from './Person/Person';
-import Radium,{StyleRoot} from 'radium';
 import Classes from './App.css';
 
 
@@ -46,17 +45,10 @@ togglePersonHandler = () => {
 
   render() {
 
-  const  style = {
-      backgroundColor: 'green',
-      font: 'inherit',
-      border: '1px solid blue',
-      padding: '8px',
-      cursor: 'pointer',
-     
-    };
+  
 
     let persons = null;
-
+    let btnClass = '';
     if(this.state.showPersons){
       persons = (
         <div>
@@ -71,8 +63,7 @@ togglePersonHandler = () => {
           })}
         </div> 
       );
-
-      style.backgroundColor = 'red';
+      btnClass = Classes.red;
      }
 
     let classes = [];
@@ -94,10 +85,7 @@ togglePersonHandler = () => {
 
       <div className={Classes.App}>
       <p className={classes.join(' ')}>This is really working!</p>
-      <button 
-      style={style}
-      onClick={this.togglePersonHandler}
-      >Toggle persons</button>
+      <button className={btnClass} onClick={this.togglePersonHandler}>Toggle persons</button>
       {persons}
       </div>
 
