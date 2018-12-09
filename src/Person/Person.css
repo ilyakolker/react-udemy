@@ -7,3 +7,9 @@
     text-align: center;
     background-color: rgb(221, 243, 221)  
 }
+
+@media(min-width: 500px){
+    .Person {
+        width: 450px;
+    }
+}
